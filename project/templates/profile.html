@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="profile-header">
+    <div class="profile-info">
+        <h2>Welcome, {{ user.username }}</h2>
+    </div>
+    <a href="{{ url_for('add_summary') }}" class="btn add-summary-btn">Add Summary</a>
+</div>
+<div class="grid">
+    {% for summary in summaries %}
+    <div class="card">
+        <h3>{{ summary.title }}</h3>
+        <p class="author">by {{ summary.author }}</p>
+        <p>{{ summary.summary }}</p>
+        <p><strong>Date Read:</strong> {{ summary.date_read }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

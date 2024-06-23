@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Add Summary{% endblock %}
+
+{% block content %}
+<h1>Add Book Summary</h1>
+<form method="POST" action="{{ url_for('add_summary') }}">
+    <label for="title">Book Title</label>
+    <input type="text" id="title" name="title" required>
+    <label for="author">Author</label>
+    <input type="text" id="author" name="author" required>
+    <label for="date_read">Date Read</label>
+    <input type="text" id="date_read" name="date_read" required>
+    <label for="summary">Summary</label>
+    <textarea id="summary" name="summary" rows="10" required></textarea>
+    <button type="submit" class="btn">Save Summary</button>
+</form>
+{% endblock %}
